@@ -64,9 +64,7 @@ const Form = () => {
                 id="name"
                 name="name"
                 type="text"
-				value={formik.values.name}
-				onChange={formik.handleChange}
-				onBlur={formik.handleBlur}
+				{...formik.getFieldProps('name')}
             />
 			{formik.errors.name && formik.touched.name ? <div className="error">{formik.errors.name}</div> : null}
             <label htmlFor="email">Ваша почта</label>
@@ -74,9 +72,10 @@ const Form = () => {
                 id="email"
                 name="email"
                 type="email"
-				value={formik.values.email}
-				onChange={formik.handleChange}
-				onBlur={formik.handleBlur}
+				{...formik.getFieldProps('email')}
+				// value={formik.values.email}
+				// onChange={formik.handleChange}
+				// onBlur={formik.handleBlur}
             />
 			{formik.errors.email && formik.touched.email  ? <div className="error">{formik.errors.email}</div> : null}
             <label htmlFor="amount">Количество</label>
@@ -84,18 +83,20 @@ const Form = () => {
                 id="amount"
                 name="amount"
                 type="number"
-				value={formik.values.amount}
-				onChange={formik.handleChange}
-				onBlur={formik.handleBlur}
+				{...formik.getFieldProps('amount')}
+				// value={formik.values.amount}
+				// onChange={formik.handleChange}
+				// onBlur={formik.handleBlur}
             />
 			{formik.errors.amount && formik.touched.amount ? <div className="error">{formik.errors.amount}</div> : null}
             <label htmlFor="currency">Валюта</label>
             <select
                 id="currency"
                 name="currency"
-				value={formik.values.currency}
-				onChange={formik.handleChange}
-				onBlur={formik.handleBlur}
+				{...formik.getFieldProps('currency')}
+				// value={formik.values.currency}
+				// onChange={formik.handleChange}
+				// onBlur={formik.handleBlur}
 				>
                     <option value="">Выберите валюту</option>
                     <option value="USD">USD</option>
@@ -107,18 +108,21 @@ const Form = () => {
             <textarea 
                 id="text"
                 name="text"
-				value={formik.values.text}
-				onChange={formik.handleChange}
-				onBlur={formik.handleBlur}
+				{...formik.getFieldProps('text')}
+				// value={formik.values.text}
+				// onChange={formik.handleChange}
+				// onBlur={formik.handleBlur}
             />
 			{formik.errors.text && formik.touched.text ? <div className="error">{formik.errors.text}</div> : null}
             <label className="checkbox">
                 <input 
 					name="terms" 
 					type="checkbox" 
-					value={formik.values.terms}
-					onChange={formik.handleChange}
-					onBlur={formik.handleBlur}/>
+					{...formik.getFieldProps('terms')}
+					// value={formik.values.terms}
+					// onChange={formik.handleChange}
+					// onBlur={formik.handleBlur}
+					/>
                 Соглашаетесь с политикой конфиденциальности?
             </label>
 			{formik.errors.terms && formik.touched.terms ? <div className="error">{formik.errors.terms}</div> : null}
